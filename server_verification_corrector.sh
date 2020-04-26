@@ -5,7 +5,10 @@
 
 # This script aims to correct  server certificate verification failed i encoutered against a valid let's encrypt certificate
 
-#USAGE:
+# USAGE
+# You can run this scritp directly using:
+# wget https://raw.githubusercontent.com/Tontonjo/debian/master/server_verification_corrector.sh
+# bash server_verification_corrector.sh
 
 #Sources: https://fabianlee.org/2019/01/28/git-client-error-server-certificate-verification-failed/
 
