@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Tonton Jo - 2020
-# Join me on Youtube: https://www.youtube.com/channel/UCnED3K6K5FDUp-x_8rwpsZw
+# Join me on Youtube: https://www.youtube.com/c/TontonJo
 
 # This script aims to correct  server certificate verification failed i encoutered against a valid let's encrypt certificate
 
