@@ -8,14 +8,15 @@ Excellent guide in case of need: https://linuxize.com/post/how-to-setup-password
 ## Commands to create a private and public key to allow passwordless SSH connexion between hosts
 
 ### Check if keys exist:
+```shell
 ls -al ~/.ssh/id_*.pub
-
+```
 ### Generate keys  
-shell```
+```shell
 ssh-keygen -t rsa -b 4096 
 ```
 
 ### Copy ID to remote server
-shell```
+```shell
 ssh-copy-id user@ipaddress
 ```
