@@ -10,8 +10,12 @@ Excellent guide in case of need: https://linuxize.com/post/how-to-setup-password
 ### Check if keys exist:
 ls -al ~/.ssh/id_*.pub
 
-######## Generate keys
+### Generate keys  
+shell```
 ssh-keygen -t rsa -b 4096 
+```
 
 ### Copy ID to remote server
+shell```
 ssh-copy-id user@ipaddress
+```
