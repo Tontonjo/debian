@@ -2,7 +2,7 @@
 
 In case you want to supply answwers when installing package, here's how you can find wich one are needed by the package:  
 
-### install needed tools:
+### Install needed tools:
 ```shell
 apt-get install debconf-utils 
 ```  
