@@ -2,6 +2,10 @@
 
 In case you want to supply answwers when installing package, here's how you can find wich one are needed by the package:  
 
+### Install the bianry for which you need auto-answers:
+```shell
+apt-get install iptables-persistent
+```  
 ### Install needed tools:
 ```shell
 apt-get install debconf-utils 
