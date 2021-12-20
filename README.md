@@ -1,5 +1,5 @@
 # debian
-A repo for Debian aimed scripts
+A repo for Debian aimed scripts and documentation
 
 ## Tonton Jo - 2021  
 ### Join the community:
