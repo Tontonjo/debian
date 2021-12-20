@@ -1,4 +1,4 @@
-# dpkg_auto_answer_finder
+# debconf_auto_answer_finder
 
 In case you want to supply answwers when installing package, here's how you can find wich one are needed by the package:  
 
