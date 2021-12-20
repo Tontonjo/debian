@@ -1,8 +1,8 @@
 # dkg_auto_answer_finder
 
-shell```
+```shell
 apt-get install debconf-utils 
-```
-shell```
+```  
+```shell
 debconf-get-selections | grep ^iptables-persistent
 ```
