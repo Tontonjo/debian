@@ -4,4 +4,4 @@
 
 ```ssh
 ls /sys/class/leds/
-```ssh
+```
