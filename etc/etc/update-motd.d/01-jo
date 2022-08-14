@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Tonton Jo - 2022
+# Join me on Youtube: https://www.youtube.com/c/tontonjo
+
+# This script is used to show some informationals informations when login on system
+
+# USAGE
+# wget -qO /etc/update-motd.d/01-jo https://raw.githubusercontent.com/Tontonjo/debian/blablalablbla
+## make a backup and delete motd file
+# cp /etc/motd /etc/motd.bck && rm -rf motd
+## Delete uname motd script
+# rm -rf /etc/update-motd.d/10-uname
+
+# SOURCES:
+# https://pve.proxmox.com/wiki/Fail2ban
+
+# TODO:
+# settings for zram -> https://pve.proxmox.com/wiki/Zram
+# PBS: add support for user creation and backup / restoration
+# make things stupid-proof (deny characters when numbers expected ans so on)
+# Cosmetic corrections
+
+# Proxmox_toolbox
+version=3.9.8
+
+# V1.0: Initial Release
+echo
+freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
+
+echo " Welcome to: $(hostname)"
+echo " User: user: $(id -u -n)"
+echo " Host IP:    $(hostname -i)"
+echo
+echo " Sytem OS:  $(lsb_release -s -d)"
+echo
+echo " CPU:      $(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)"
+echo " Memory:    $(free -m | head -n 2 | tail -n 1 | awk {'print $2'}) M"
+echo " Swap:      $(free -m | tail -n 1 | awk {'print $2'}) M"
+echo
+echo " Disk:      
+ $(echo "$freespace")"
