@@ -22,14 +22,15 @@
 
 # V1.0: Initial Release
 
-echo
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 
+echo
+echo $(hostnamectl | grep -i Operating)
+echo
 echo " Welcome to: $(hostname)"
 echo " User: user: $(id -u -n)"
 echo " Host IP:    $(hostname -i)"
 echo
-echo " Sytem OS:  $(lsb_release -s -d)"
 echo
 echo " CPU:      $(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)"
 echo " Memory:    $(free -m | head -n 2 | tail -n 1 | awk {'print $2'}) M"
@@ -37,4 +38,3 @@ echo " Swap:      $(free -m | tail -n 1 | awk {'print $2'}) M"
 echo
 echo " Disk:      
  $(echo "$freespace")"
- echo
