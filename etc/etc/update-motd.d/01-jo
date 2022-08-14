@@ -13,18 +13,12 @@
 # rm -rf /etc/update-motd.d/10-uname
 
 # SOURCES:
-# https://pve.proxmox.com/wiki/Fail2ban
+# https://cloudybarz.com/custom-motd-in-linux-debian/
+# https://unix.stackexchange.com/questions/267562/show-only-physical-disks-when-using-df-and-mount
 
-# TODO:
-# settings for zram -> https://pve.proxmox.com/wiki/Zram
-# PBS: add support for user creation and backup / restoration
-# make things stupid-proof (deny characters when numbers expected ans so on)
-# Cosmetic corrections
-
-# Proxmox_toolbox
-version=3.9.8
 
 # V1.0: Initial Release
+
 echo
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 
