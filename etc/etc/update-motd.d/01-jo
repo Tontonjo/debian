@@ -6,7 +6,7 @@
 # This script is used to show some informationals informations when login on system
 
 # USAGE
-# wget -qO /etc/update-motd.d/01-jo https://raw.githubusercontent.com/Tontonjo/debian/blablalablbla
+# wget -qO /etc/update-motd.d/01-jo https://github.com/Tontonjo/debian/raw/master/etc/etc/update-motd.d/01-jo
 ## make a backup and delete motd file
 # cp /etc/motd /etc/motd.bck && rm -rf motd
 ## Delete uname motd script
