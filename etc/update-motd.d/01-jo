@@ -28,7 +28,7 @@ echo
 echo $(hostnamectl | grep -i Operating)
 echo
 echo " Welcome to: $(hostname)"
-echo " User: user: $(id -u -n)"
+echo " user:       $(id -u -n)"
 echo " Host IP:    $(hostname -i)"
 echo
 echo
