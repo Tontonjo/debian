@@ -37,3 +37,4 @@ echo " Swap:      $(free -m | tail -n 1 | awk {'print $2'}) M"
 echo
 echo " Disk:      
  $(echo "$freespace")"
+ echo
