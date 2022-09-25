@@ -11,7 +11,7 @@
 ## make it executable
 # chmod +x /etc/update-motd.d/01-jo
 ## make a backup and delete motd file
-# cp /etc/motd /etc/motd.bck && rm -rf motd
+# cp /etc/motd /etc/motd.bck && rm -rf /etc/motd
 ## Delete uname motd script
 # rm -rf /etc/update-motd.d/10-uname
 
