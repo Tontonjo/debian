@@ -17,7 +17,6 @@ google-authenticator
 nano /etc/pam.d/sshd
 ```  
 add:  
-# The nullok word at the end of the last line tells the PAM that this authentication method is optional. This allows users without an OATH-TOTP token
 auth required pam_google_authenticator.so nullok
 
 ### Enable 2fa for password logins:
