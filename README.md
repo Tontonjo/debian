@@ -13,5 +13,5 @@ A repo for Debian aimed scripts and documentation
 ## Execute:
 ### Hostname_changer.sh
 ```ssh
-if [[ $(id -u) -ne 0 ]] ; then sudo wget -q -O - https://github.com/Tontonjo/debian/raw/master/hostname_changer.sh | sudo bash ; else wget -q -O - https://github.com/Tontonjo/debian/raw/master/hostname_changer.sh | bash ; fi
+if [[ $(id -u) -ne 0 ]] ; then sudo wget -q -O hostname_changer.sh https://github.com/Tontonjo/debian/raw/master/hostname_changer.sh | sudo bash hostname_changer.sh; else wget -q -O hostname_changer.sh https://github.com/Tontonjo/debian/raw/master/hostname_changer.sh | bash hostname_changer.sh; fi
 ```
