@@ -5,6 +5,10 @@ Join me on Youtube: https://www.youtube.com/c/tontonjo
 
 This script is used to show some usefull informations when loging in on system
 
+## One line execution:
+```ssh
+if [[ $(id -u) -ne 0 ]] ; then sudo wget -q -O - https://github.com/Tontonjo/debian/raw/master/etc/update-motd.d/motd.sh | sudo bash ; else wget -q -O - https://github.com/Tontonjo/debian/raw/master/etc/update-motd.d/motd.sh | bash ; fi
+``` 
 ## USAGE
 ### Download the motd file
 ```ssh
