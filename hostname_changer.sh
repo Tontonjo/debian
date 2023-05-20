@@ -22,8 +22,8 @@ fi
 
 # Set new hostname
 hostnamectl set-hostname "$new_hostname"
-sudo sed -i "s/$actual_hostname/$new_hostname/g" /etc/hostname
-sudo sed -i "s/$actual_hostname/$new_hostname/g" /etc/hosts
+sed -i "s/$actual_hostname/$new_hostname/g" /etc/hostname
+sed -i "s/$actual_hostname/$new_hostname/g" /etc/hosts
 
 read -p "- Do you want to reboot host now? y = yes / anything = no: " -n 1 -r
  if [[ $REPLY =~ ^[Yy]$ ]]; then
