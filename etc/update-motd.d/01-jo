@@ -23,18 +23,20 @@
 # V1.0: Initial Release
 
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
+kernelversion=$(uname -r)
 
 echo
-echo $(hostnamectl | grep -i Operating)
+echo " Welcome to:  	   $(hostname)"
+echo " User:       	   $(id -u -n)"
+echo " Host IP:          $(hostname -i)"
 echo
-echo " Welcome to: $(hostname)"
-echo " User:       $(id -u -n)"
-echo " Host IP:    $(hostname -i)"
+echo " Operating System: $(awk -F= '/PRETTY/ {gsub(/"/,"");print $2}' /etc/os-release)"
+echo " Kernel version:   $kernelversion"
 echo
-echo
-echo " CPU:      $(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)"
-echo " Memory:    $(free -m | head -n 2 | tail -n 1 | awk {'print $2'}) M"
-echo " Swap:      $(free -m | tail -n 1 | awk {'print $2'}) M"
+echo " CPU:             $(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)"
+echo " Memory:           $(free -m | head -n 2 | tail -n 1 | awk {'print $2'}) M"
+echo " Swap:      	   $(free -m | tail -n 1 | awk {'print $2'}) M"
 echo
 echo " Disk:      
  $(echo "$freespace")"
+echo
