@@ -8,5 +8,5 @@
 
 ```mount /dev/sdX /mnt/data```
 
-```trfs device usage /mnt/data/```
+```btrfs device usage /mnt/data/```
 
