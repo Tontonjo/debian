@@ -1,12 +1,27 @@
-```wipefs --all -t btrfs /dev/sdX /dev/sdX```
+```ssh
+wipefs --all -t btrfs /dev/sdX /dev/sdX
+```
 
-```btrfs filesystem show```
+```ssh
+btrfs filesystem show
+```
 
-```mkfs.btrfs -m raid1 -d raid1 /dev/sdX /dev/sdX```
+```ssh
+mkfs.btrfs -m raid1 -d raid1 /dev/sdX /dev/sdX
+```
 
-```mkdir /mnt/data```
+```ssh
+mkdir /mnt/data
+```
 
-```mount /dev/sdX /mnt/data```
+```ssh
+mount /dev/sdX /mnt/data
+```
+```ssh
+mount -o degraded /dev/sdX /mnt/data
+```
 
-```btrfs device usage /mnt/data/```
+```ssh
+btrfs device usage /mnt/data/
+```
 
