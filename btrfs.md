@@ -11,7 +11,7 @@ btrfs filesystem usage /mnt/data
 wipefs --all -t btrfs /dev/sdX /dev/sdX
 ```
 
-# Create a raid 1 (btrfs does not supports raid5 well - discouraged)
+## Create a raid 1 (btrfs does not supports raid5 well - discouraged)
 ```ssh
 mkfs.btrfs -m raid1 -d raid1 /dev/sdX /dev/sdX
 ```
