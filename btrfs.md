@@ -28,6 +28,20 @@ mount /dev/sdX /mnt/data
 ```ssh
 btrfs device usage /mnt/data/
 ```
+
+## Mount in fstab:
+- identify the btrfs UUID
+```ssh
+btrfs filesystem show | grep uuid
+```
+```ssh
+nano /etc/fstab
+```
+add the folowwing
+```ssh
+UUID=$youruuid /mnt/data         btrfs   defaults,nofail      0  0
+```
+
 ## Replace a drive:
 - File system has to be mounted.
 ```ssh
