@@ -11,7 +11,7 @@ btrfs filesystem usage /mnt/data
 wipefs --all -t btrfs /dev/sdX /dev/sdX
 ```
 
-## Create a raid 1 (btrfs does not supports raid5 well - discouraged)
+## Create a raid 1 and mount it (btrfs does not supports raid5 well - discouraged)
 ```ssh
 mkfs.btrfs -m raid1 -d raid1 /dev/sdX /dev/sdX
 ```
@@ -51,6 +51,9 @@ mount -o degraded /dev/sdX /mnt/data
 ```ssh
 btrfs filesystem show
 ```
+```ssh
+btrfs device usage /mnt/data | grep missing
+```
 In this case, the missing drive is the "1" as i have devid 2 and my raid is raid1
 ```Label: none  uuid: a78a5a91-ad4b-4037-861d-92212b34f63c
         Total devices 2 FS bytes used 1.00GiB
@@ -59,8 +62,12 @@ In this case, the missing drive is the "1" as i have devid 2 and my raid is raid
 ```
 Add new drive to system and wipe it if needed
 ```ssh
-btrfs replace start 1  /dev/sdd  /mnt/data
+btrfs replace start $id /dev/newdrivepath  /mnt/data
 ```
+Check progress:
+```ssh
+btrfs replace status /mnt/data
+```  
 Check again using "btrfs filesystem show" that the drive has been correctly replaced
 After a disk has been failing or being replaced, rebalance the data
 ```ssh
@@ -101,6 +108,7 @@ Label: none  uuid: 706e4f5a-c829-45f4-a8aa-56375ea4d850
         devid    2 size 6.00GiB used 608.00MiB path /dev/sdf
 ```
 
-
-
+# Sources and links:
+https://wiki.tnonline.net/w/Btrfs/Replacing_a_disk#Status_monitoring
+https://btrfs.readthedocs.io/en/latest/btrfs-replace.html
 
