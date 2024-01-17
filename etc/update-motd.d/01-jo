@@ -21,9 +21,10 @@
 
 
 # V1.0: Initial Release
-
+# V1.1: Added uptime 
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 kernelversion=$(uname -r)
+uptime=$(uptime -p)
 
 echo
 echo " Welcome to:  	   $(hostname)"
@@ -32,6 +33,7 @@ echo " Host IP:          $(hostname -i)"
 echo
 echo " Operating System: $(awk -F= '/PRETTY/ {gsub(/"/,"");print $2}' /etc/os-release)"
 echo " Kernel version:   $kernelversion"
+echo " Uptime:           $uptime"
 echo
 echo " CPU:             $(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)"
 echo " Memory:           $(free -m | head -n 2 | tail -n 1 | awk {'print $2'}) M"
