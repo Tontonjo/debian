@@ -3,6 +3,7 @@
 # Tonton Jo - 2024
 # Join me on Youtube: https://www.youtube.com/c/tontonjo
 
+# V1.2: List ip's with unknown localisation
 # V1.1: Some enhancements, use variables for country, now count total of banned IP's
 # V1.0: Initial Release
 
@@ -51,4 +52,7 @@ Total des IP bannies: $numberofbannedips
 Adresses IP pour $country_to_display:
 ${ip_by_country["$country_to_display"]}
 
+Localisation inconnue:
+${ip_by_country["GeoIPCountryEdition:IPAddressnotfound"]}
+"
 "
