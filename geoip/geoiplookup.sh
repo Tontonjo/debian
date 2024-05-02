@@ -55,4 +55,3 @@ ${ip_by_country["$country_to_display"]}
 Localisation inconnue:
 ${ip_by_country["GeoIPCountryEdition:IPAddressnotfound"]}
 "
-"
