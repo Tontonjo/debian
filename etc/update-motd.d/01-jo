@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Tonton Jo - 2024
+# Tonton Jo - 2025
 # Join me on Youtube: https://www.youtube.com/c/tontonjo
 
 # This script is used to show some usefull informations when loging in on system
@@ -24,10 +24,13 @@
 # V1.1: Added uptime
 # V1.2: Use hostname -I insead of -i to show all host IP's
 # V1.3: Get public ip's
+# V1.4: Add date
+
 
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 kernelversion=$(uname -r)
 uptime=$(uptime -p)
+systemdate=$(date)
 
 echo "
 Welcome to:  	  $(hostname)
@@ -36,6 +39,7 @@ User:       	  $(id -u -n)
 Operating System: $(awk -F= '/PRETTY/ {gsub(/"/,"");print $2}' /etc/os-release)
 Kernel version:   $kernelversion
 Uptime:           $uptime
+System time:      $systemdate
 
 Host local IP:    $(hostname -I)
 Public IPv4       $(curl --connect-timeout 1 myipv4.addr.tools)
