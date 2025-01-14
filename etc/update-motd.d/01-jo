@@ -30,7 +30,7 @@
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 kernelversion=$(uname -r)
 uptime=$(uptime -p)
-systemdate=$(date)
+systemdate=$(date +"%d.%m.%Y %H:%M:%S")
 
 echo "
 Welcome to:  	  $(hostname)
