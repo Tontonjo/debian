@@ -25,12 +25,14 @@
 # V1.2: Use hostname -I insead of -i to show all host IP's
 # V1.3: Get public ip's
 # V1.4: Add date
+# V1.5: Add Cpu cores total
 
 
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 kernelversion=$(uname -r)
 uptime=$(uptime -p)
 systemdate=$(date +"%d.%m.%Y %H:%M:%S")
+cpucores=$(nproc --all)
 
 echo "
 Welcome to:  	  $(hostname)
@@ -45,11 +47,11 @@ Host local IP:    $(hostname -I)
 Public IPv4       $(curl --connect-timeout 1 myipv4.addr.tools)
 Public IPv6       $(curl --connect-timeout 1 myipv6.addr.tools)
 
-CPU:             $(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)
+CPU:              $cpucores cores -$(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)
 Memory:           $(free -m | head -n 2 | tail -n 1 | awk {'print $2'}) M
 Swap:      	  $(free -m | tail -n 1 | awk {'print $2'}) M
 
 Disk:      
- $(echo "$freespace")
+$(echo "$freespace")
  
  "
