@@ -40,7 +40,6 @@ totalMemory=$(echo "$memory" | head -n 2 | tail -n 1 | awk {'print $2'})
 totalSwap=$(echo "$memory" | tail -n 1 | awk {'print $2'})
 usedMemory=$(echo "$memory" | head -n 2 | tail -n 1 | awk {'print $3'})
 usedSwap=$(echo "$memory" | tail -n 1 | awk {'print $3'})
-nameserver=$(cat /etc/resolv.conf | grep nameserver | awk {'print $2'})
 
 echo "
 Welcome to:  	  $(hostname)
@@ -51,7 +50,6 @@ Uptime:           $uptime
 System time:      $systemdate
 
 Host local IP:    $(hostname -I)
-DNS Server:       $nameserver
 Public IPv4       $(curl --connect-timeout 1 myipv4.addr.tools)
 Public IPv6       $(curl --connect-timeout 1 myipv6.addr.tools)
 
