@@ -27,11 +27,13 @@
 # V1.4: Add date
 # V1.5: Add Cpu cores total
 # V2.0: Lots of changes
+# V2.1: Display nameserver again but using resolvectl
 
 
 freespace=$(df -H --type mount --type btrfs --type ext4 --type ext3 --type ext2 --type vfat --type iso9660)
 kernelversion=$(uname -r)
 uptime=$(uptime -p)
+nameserver=$(resolvectl status | grep "Current DNS Server" | awk {'print $4'})
 systemdate=$(date +"%d.%m.%Y %H:%M:%S")
 cpucores=$(nproc --all)
 cpumodel=$(cat /proc/cpuinfo | grep 'model name' | head -1 | cut -d':' -f2)
@@ -50,6 +52,7 @@ Uptime:           $uptime
 System time:      $systemdate
 
 Host local IP:    $(hostname -I)
+DNS Server:       $nameserver
 Public IPv4       $(curl --connect-timeout 1 myipv4.addr.tools)
 Public IPv6       $(curl --connect-timeout 1 myipv6.addr.tools)
 
